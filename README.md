@@ -3,7 +3,12 @@ The core objective was to develop and rigorously validate a multimodal imaging p
 
 ### Repository Structure  
 THCA-ITH/  
-│  
+│
+├── 0_Semi-automatic_lesion_segmentation_in_CT_images/  
+│   ├── 0.1_CBAM.py           # The Convolutional Block Attention Module  
+│   ├── 0.2_Segmentation Modification Assessment and Review Tool.py             # Segmentation Performance Evaluation 
+│   └── README.md  
+│
 ├── 1_radiomics_feature_extraction/  
 │   ├── 1.1_Thyroid_Radiomics_Standard.py           # PyRadiomics features (~107)  
 │   ├── 1.2_TITAN_pipeline.py             # iTED + 3D ITHscore (~50)  
