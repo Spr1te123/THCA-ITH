@@ -92,8 +92,8 @@ scipy
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/thyroid-radiomics.git
-cd thyroid-radiomics
+git clone https://github.com/Spr1te123/THCA-ITH.git
+cd radiomics_feature_extraction
 
 # Install dependencies
 pip install numpy pandas SimpleITK pyradiomics matplotlib scikit-image scikit-learn scipy
