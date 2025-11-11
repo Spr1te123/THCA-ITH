@@ -6,7 +6,7 @@ THCA-ITH/
 │  
 ├── 0_Semi-automatic_lesion_segmentation_in_CT_images/  
 │   ├── 0.1_CBAM.py           # The Convolutional Block Attention Module  
-│   ├── 0.2_Segmentation Modification Assessment and Review Tool.py             # Segmentation Performance Evaluation 
+│   ├── 0.2_Segmentation Modification Assessment and Review Tool.py             # Segmentation Performance Evaluation  
 │   └── README.md  
 │  
 ├── 1_radiomics_feature_extraction/  
