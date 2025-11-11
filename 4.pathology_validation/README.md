@@ -590,7 +590,7 @@ analyzer.generate_final_report()
 
 ## Performance Benchmarks
 
-### Processing Speed (RTX 3090, 24GB VRAM)
+### Processing Speed (RTX 4090, 24GB VRAM)
 
 **Single WSI**:
 - Small slide (5000×5000 μm²): ~5-10 minutes
