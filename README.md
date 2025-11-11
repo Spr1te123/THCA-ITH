@@ -37,8 +37,4 @@ THCA-ITH/
 │   └── README.md  
 │  
 ├── README.md                                   # This file  
-├── README_CN.md                                # Chinese version  
-├── requirements.txt                            # Python dependencies  
-├── environment.yml                             # Conda environment  
-├── LICENSE                                     # MIT License  
-└── .gitignore  
+
