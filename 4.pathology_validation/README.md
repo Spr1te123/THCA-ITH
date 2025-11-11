@@ -2,7 +2,7 @@
 
 ## Overview
 
-This module provides a comprehensive whole slide image (WSI) analysis pipeline for validating machine learning model predictions through pathology-based biomarkers. The workflow includes WSI processing, nucleus instance segmentation, nuclear feature extraction, and statistical comparison between risk groups predicted by the best-performing model. This module bridges the gap between radiomics-based predictions and histopathological ground truth.
+This module provides a comprehensive whole slide image (WSI) analysis pipeline for validating machine learning model predictions through pathology-based features. The workflow includes WSI processing, nucleus instance segmentation, nuclear feature extraction, and statistical comparison between risk groups predicted by the best-performing model. This module bridges the gap between radiomics-based predictions and histopathological ground truth.
 
 ---
 
@@ -450,15 +450,16 @@ torch>=1.10.0  # For TIAToolbox backend
 ## Installation
 
 ```bash
-# Create conda environment
-conda create -n tiatoolbox-dev python=3.9
+# Navigate to the directory where you wish to store the project and clone the repository
+git clone https://github.com/TissueImageAnalytics/tiatoolbox.git
+
+# Change the directory to tiatoolbox
+cd tiatoolbox
+
+# Create a virtual environment using TIAToolbox
+conda create -n tiatoolbox-dev python=3.10 (select the version of your choice)
 conda activate tiatoolbox-dev
-
-# Install PyTorch with CUDA support
-conda install pytorch torchvision cudatoolkit=11.3 -c pytorch
-
-# Install TIAToolbox
-pip install tiatoolbox
+pip install -r requirements/requirements_dev.txt
 
 # Install other dependencies
 pip install opencv-python scikit-image scipy pandas \
@@ -607,100 +608,3 @@ analyzer.generate_final_report()
 - Feature extraction: ~1-2GB RAM per patient
 
 ---
-
-## Troubleshooting
-
-### Common Issues
-
-1. **CUDA Out of Memory**
-   - Reduce `--batch-size` (try 256, 128, or 64)
-   - Enable `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`
-   - Close other GPU processes
-
-2. **Segmentation Quality Poor**
-   - Try enabling stain normalization: `--normalize --norm-method macenko`
-   - Check tissue detection: review PDF visualization
-   - Adjust tissue threshold in code (line ~473)
-
-3. **Missing Tissue Regions**
-   - Script now detects ALL tissue regions by default
-   - Check log for "Found X tissue regions"
-   - Manually verify tissue_mask visualization
-
-4. **Slow Processing**
-   - Increase `--batch-size` if GPU memory allows
-   - Use `--quick-test` for validation first
-   - Ensure NVMe SSD for WSI storage (I/O bottleneck)
-
-5. **OpenSlide Errors**
-   - Install OpenSlide: `conda install openslide -c conda-forge`
-   - Check file format: Convert to `.svs` if needed
-   - Verify file integrity: `openslide-show-properties slide.svs`
-
----
-
-## Best Practices
-
-### WSI Processing
-- Always run `--quick-test` on one slide first to verify setup
-- Use stain normalization for slides from different scanners
-- Monitor GPU temperature during long batch jobs
-- Save intermediate results frequently
-
-### Feature Extraction
-- Extract features immediately after segmentation (while data is fresh)
-- Validate feature distributions before analysis
-- Check for outliers (artifacts can affect features)
-- Normalize features before statistical tests
-
-### Statistical Analysis
-- Use non-parametric tests (Mann-Whitney U) for non-normal distributions
-- Always check effect sizes, not just p-values
-- Perform multiple testing correction (Bonferroni, FDR)
-- Visualize data before running tests
-
-### Reproducibility
-- Document all parameters used
-- Save random seeds
-- Version control analysis scripts
-- Archive raw segmentation data
-
----
-
-## Citation
-
-If you use this pipeline in your research, please cite:
-
-```
-[Your citation information]
-TIAToolbox: [TIAToolbox citation]
-HoVerNet: [HoVerNet citation if using that model]
-```
-
----
-
-## License
-
-[Specify your license]
-
----
-
-## Contact
-
-For questions or issues:
-- **Email**: [your-email@example.com]
-- **GitHub Issues**: [Repository URL]/issues
-
----
-
-## Acknowledgments
-
-- **TIAToolbox**: Computational pathology toolbox
-- **HoVerNet**: Nucleus instance segmentation model
-- **OpenSlide**: Whole slide image I/O library
-
----
-
-## Version History
-
-- **v1.0** (2024): Initial release with multi-tissue support, comprehensive feature extraction, and statistical analysis
