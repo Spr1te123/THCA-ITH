@@ -21,19 +21,13 @@ warnings.filterwarnings('ignore')
 plt.rcParams['font.sans-serif'] = ['DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
 
-# 定义患者分组
-#LOW_RISK_PATIENTS = [554, 560, 592, 607, 619, 621, 625, 629, 644, 645, 676, 700, 713, 661, 646, 879]
-#HIGH_RISK_PATIENTS = [365, 692, 654, 47, 514, 518, 576, 597, 651, 679, 704, 552, 491, 557, 585, 608, 615, 673]
-#更换lightgbm后的阈值
-#LOW_RISK_PATIENTS = [47, 365, 554, 560, 592, 607, 619, 621, 625, 629, 644, 645, 676, 700, 713, 661, 646, 879]
-#HIGH_RISK_PATIENTS = [491, 514, 518, 552, 557, 576, 585, 597, 608, 615, 651, 673, 679, 704]
 #采用筛查阈值后的风险分组
-LOW_RISK_PATIENTS = [47, 554, 560, 592, 607, 619, 621, 625, 629, 644, 645, 676, 700, 713, 661, 646, 879]
-HIGH_RISK_PATIENTS = [365, 491, 514, 518, 552, 557, 576, 585, 597, 608, 615, 651, 654, 673, 679, 692, 704]
+LOW_RISK_PATIENTS = [47, 554, ...]
+HIGH_RISK_PATIENTS = [365, ...]
 
 # 添加真实临床结局（仅用于综合评分计算）
-NON_METASTASIS_PATIENTS = [47, 365, 554, 560, 592, 607, 619, 621, 625, 629, 644, 645, 646, 661, 676, 700, 713, 879]
-METASTASIS_PATIENTS = [491, 514, 518, 552, 557, 576, 585, 597, 608, 615, 651, 654, 673, 679, 692, 704]
+NON_METASTASIS_PATIENTS = [47, ...]
+METASTASIS_PATIENTS = [491, ...]
 
 # 数据路径
 DATA_DIR = "/data/tiatoolbox/模型解释"  # 输入数据目录
