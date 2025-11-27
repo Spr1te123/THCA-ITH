@@ -6,7 +6,7 @@ THCA-ITH/
 │  
 ├── 0_Semi-automatic_lesion_segmentation_in_CT_images/  
 │   ├── 0.1_CBAM.py           # The Convolutional Block Attention Module  
-│   ├── 0.2_Segmentation Modification Assessment and Review Tool.py             # Segmentation Performance Evaluation  
+│   ├── 0.2_Segmentation_Modification_Assessment_and_Review_Tool.py             # Segmentation Performance Evaluation  
 │   └── README.md  
 │  
 ├── 1_radiomics_feature_extraction/  
@@ -15,25 +15,25 @@ THCA-ITH/
 │   └── README.md  
 │  
 ├── 2_clinical_data_processing/  
-│   ├── 2.1_clinical_data_preprocessing.py              # Clinical feature preprocessing  
-│   ├── 2.2_Comparison of clinical baseline data.py                # Table 1 generation  
-│   ├── 2.3_Univariate and multivariate analysis.py            # Univariate/multivariate analysis  
+│   ├── 2.1_Clinical_data_preprocessing.py              # Clinical feature preprocessing  
+│   ├── 2.2_Comparison_of_clinical_baseline_data.py                # Table 1 generation  
+│   ├── 2.3_Univariate_and_multivariate_analysis.py            # Univariate/multivariate analysis  
 │   └── README.md  
 │  
 ├── 3_model_training/  
-│   ├── 3.1_lightgbm_training.py               # LightGBM model with SMOTE  
+│   ├── 3.1_Lightgbm_training.py               # LightGBM model with SMOTE  
 │   └── README.md  
 │  
 ├── 4_pathology_validation/  
 │   ├── 4.1_wsi_processing_multi_tissue.py        # HoVer-Net segmentation       
-│   ├── 4.2_batch_process_multi_tissue.sh            # Batch process nucleus segmentation  
-│   ├── 4.3_generate_reference_all.py              # Stain normalization  
-│   ├── 4.4_nuclear_feature_extraction.py      # 28 features per nucleus  
-│   ├── 4.5_thyroid_cancer_pathology_analysis.py              # Pathology-radiomics correlation  
+│   ├── 4.2_Batch_process_multi_tissue.sh            # Batch process nucleus segmentation  
+│   ├── 4.3_Generate_reference_all.py              # Stain normalization  
+│   ├── 4.4_Nuclear_feature_extraction.py      # 28 features per nucleus  
+│   ├── 4.5_Thyroid_cancer_pathology_analysis.py              # Pathology-radiomics correlation  
 │   └── README.md  
 │  
 ├── 5_protein expression validation/  
-│   ├── 5.1_protein_expression_analysis.py     # Protein profiling  
+│   ├── 5.1_Protein_expression_analysis.py     # Protein profiling  
 │   └── README.md  
 │  
 ├── README.md                                   # This file  
